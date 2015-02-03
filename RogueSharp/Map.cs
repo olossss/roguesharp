@@ -8,7 +8,7 @@ namespace RogueSharp
    /// A Map represents a rectangular grid of Cells, each of which has a number of properties for determining walkability, field-of-view and so on
    /// The upper left corner of the Map is Cell (0,0) and the X value increases to the right, as the Y value increases downward
    /// </summary>
-   public class Map : IMap
+   public partial class Map : IMap
    {
       private FieldOfView _fieldOfView;
       private bool[,] _isTransparent;
