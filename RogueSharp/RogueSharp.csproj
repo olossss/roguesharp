@@ -43,6 +43,8 @@
     <Compile Include="Algorithms\Graph.cs" />
     <Compile Include="Algorithms\UnionFind.cs" />
     <Compile Include="Cell.cs" />
+    <Compile Include="Extensions\Cell.cs" />
+    <Compile Include="Extensions\LightingMap.cs" />
     <Compile Include="FieldOfView.cs" />
     <Compile Include="GoalMap.cs" />
     <Compile Include="IGoalMap.cs" />
