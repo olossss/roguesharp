@@ -337,6 +337,28 @@ namespace RogueSharp
          }
       }
       /// <summary>
+      /// Get an IEnumerable of Cells in a rectangular area around the Origin Cell
+      /// </summary>
+      /// <param name="xOrigin">X location of the Origin Cell with 0 as the farthest left</param>
+      /// <param name="yOrigin">Y location of the Origin Cell with 0 as the top</param>
+      /// <param name="distance">The number of Cells to get in each direction from the Origin Cell</param>
+      /// <returns>IEnumerable of Cells in a square area around the Origin Cell</returns>
+      public IEnumerable<Cell> GetCellsInRectangularArea(int xOrigin, int yOrigin, int width, int height)
+      {
+          int xMin = Math.Max(0, xOrigin);
+          int xMax = Math.Min(Width - 1, xOrigin + width);
+          int yMin = Math.Max(0, yOrigin);
+          int yMax = Math.Min(Height - 1, yOrigin + height);
+
+          for (int y = yMin; y <= yMax; y++)
+          {
+              for (int x = xMin; x <= xMax; x++)
+              {
+                  yield return GetCell(x, y);
+              }
+          }
+      }
+      /// <summary>
       /// Get an IEnumerable of the outermost border Cells in a circular Radius around the Origin Cell
       /// </summary>
       /// <param name="xOrigin">X location of the Origin Cell with 0 as the farthest left</param>
